@@ -17,5 +17,6 @@
   "devDependencies": {
     "onchange": "^3.3.0",
     "prettier": "^1.11.1"
-  }
+  },
+  "homepage": "https://metriccaution.github.io/pi-day-2018/"
 }
