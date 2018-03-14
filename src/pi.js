@@ -1,5 +1,8 @@
 export const makePoints = count =>
-  new Array(count).fill(0).map(() => ({ x: Math.random(), y: Math.random() }));
+  Array.apply(null, { length: count }).map(() => ({
+    x: Math.random(),
+    y: Math.random()
+  }));
 
 export const insideCircle = ({ x, y }) => Math.sqrt(x * x + y * y) < 1;
 
@@ -13,5 +16,5 @@ export const stepsToPi = points => [
     points.filter(insideCircle).length
   } / ${points.length}`,
   `π is approximately ${approximatePi(points).toFixed(8)}`,
-  `With an error of ${(Math.PI - approximatePi(points)).toFixed(8)}`
+  `With an error of ${Math.abs(Math.PI - approximatePi(points)).toFixed(8)}`
 ];

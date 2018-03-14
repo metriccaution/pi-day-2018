@@ -6,13 +6,20 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    const initialPoints = 100;
     this.state = {
-      points: 5000
+      pointsCount: initialPoints,
+      points: makePoints(initialPoints)
     };
   }
 
+  handleChange(e) {
+    const pointsCount = e.target.value;
+    this.setState({ pointsCount, points: makePoints(pointsCount) });
+  }
+
   render() {
-    const points = makePoints(this.state.points);
+    const points = this.state.points;
     const steps = stepsToPi(points).map(text => <li key={text}>{text}</li>);
 
     return (
@@ -34,6 +41,18 @@ class App extends Component {
             maxWidth: "50%"
           }}
         >
+          <button
+            onClick={() =>
+              this.setState({ points: makePoints(this.state.pointsCount) })
+            }
+          >
+            Reload
+          </button>
+          <input
+            type="number"
+            value={this.state.pointsCount}
+            onChange={e => this.handleChange(e)}
+          />
           <ol>{steps}</ol>
         </div>
       </div>
