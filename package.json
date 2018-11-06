@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-scripts": "2.0.4"
   },
   "scripts": {
@@ -15,7 +15,7 @@
     "prettier-watch": "onchange 'src/**/*.js' -- prettier --write {{changed}}"
   },
   "devDependencies": {
-    "onchange": "^5.0.2",
+    "onchange": "^5.1.0",
     "prettier": "^1.14.3"
   },
   "homepage": "https://metriccaution.github.io/pi-day-2018/",
